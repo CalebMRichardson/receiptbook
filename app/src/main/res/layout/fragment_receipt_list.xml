@@ -1,12 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/receipt_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/empty_list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/empty_list_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="@string/empty_list_text"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button
+            android:id="@+id/add_receipt_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_receipt_text"
+            android:layout_margin="1dp"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/holo_blue_bright"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/empty_list_textview"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
 
     </FrameLayout>

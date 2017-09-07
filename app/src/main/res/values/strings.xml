@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ReceiptLog</string>
+
+    <string name="empty_list_text">Well it looks like you\'re empty. :/</string>
+    <string name="add_receipt_text">Add your receipts here.</string>
 </resources>
