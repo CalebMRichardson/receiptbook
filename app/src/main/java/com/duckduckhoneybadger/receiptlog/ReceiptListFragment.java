@@ -8,6 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -18,6 +22,9 @@ public class ReceiptListFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private ReceiptAdapter mAdapter;
+
+    private TextView mEmptyListTextView;
+    private Button mEmptyListAddButton;
 
     public static ReceiptListFragment newInstance() {
         return new ReceiptListFragment();
@@ -37,6 +44,9 @@ public class ReceiptListFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+        mEmptyListTextView = (TextView) v.findViewById(R.id.empty_list_textview);
+        mEmptyListAddButton = (Button) v.findViewById(R.id.add_receipt_button);
+
         updateUI();
 
         return v;
@@ -49,5 +59,19 @@ public class ReceiptListFragment extends Fragment {
         mAdapter = new ReceiptAdapter(receipts);
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
+
+        boolean listIsEmpty = receiptLab.getReceipts().isEmpty();
+
+        updateEmptyNotification(listIsEmpty);
+    }
+
+    private void updateEmptyNotification(boolean isEmpty) {
+        if (isEmpty) {
+            mEmptyListAddButton.setVisibility(View.VISIBLE);
+            mEmptyListTextView.setVisibility(View.VISIBLE);
+        } else {
+            mEmptyListAddButton.setVisibility(View.INVISIBLE);
+            mEmptyListTextView.setVisibility(View.INVISIBLE);
+        }
     }
 }
