@@ -1,13 +1,13 @@
-package com.duckduckhoneybadger.receiptlog;
+package com.duckduckhoneybadger.receiptbook;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.duckduckhoneybadger.receiptlog.R;
 
 import java.util.List;
 

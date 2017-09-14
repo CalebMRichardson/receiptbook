@@ -1,4 +1,4 @@
-package com.duckduckhoneybadger.receiptlog;
+package com.duckduckhoneybadger.receiptbook;
 
 import java.util.Date;
 import java.util.UUID;

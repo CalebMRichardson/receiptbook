@@ -1,9 +1,8 @@
-package com.duckduckhoneybadger.receiptlog;
+package com.duckduckhoneybadger.receiptbook;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
@@ -13,7 +12,7 @@ public class ReceiptPagerActivity extends AppCompatActivity {
 
     //TODO make this a fragment
 
-    private static final String EXTRA_RECEIPT_ID = "com.duckduckhoneybadger.receiptlog.receipt_id";
+    private static final String EXTRA_RECEIPT_ID = "com.duckduckhoneybadger.receiptbook.receipt_id";
 
     public static Intent newIntent(Context packageContext, UUID receiptID) {
         Intent intent = new Intent(packageContext, ReceiptPagerActivity.class);
