@@ -1,9 +1,11 @@
-package com.duckduckhoneybadger.receiptlog;
+package com.duckduckhoneybadger.receiptbook;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+
+import com.duckduckhoneybadger.receiptlog.R;
 
 public abstract class SingleFrameActivity extends AppCompatActivity {
 
