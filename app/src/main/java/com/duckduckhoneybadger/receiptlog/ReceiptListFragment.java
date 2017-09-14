@@ -1,5 +1,6 @@
 package com.duckduckhoneybadger.receiptlog;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class ReceiptListFragment extends Fragment {
     private ReceiptAdapter mAdapter;
 
     private TextView mEmptyListTextView;
-    private Button mEmptyListAddButton;
+    private Button mAddNewLogButton;
 
     public static ReceiptListFragment newInstance() {
         return new ReceiptListFragment();
@@ -45,7 +44,13 @@ public class ReceiptListFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         mEmptyListTextView = (TextView) v.findViewById(R.id.empty_list_textview);
-        mEmptyListAddButton = (Button) v.findViewById(R.id.add_receipt_button);
+        mAddNewLogButton = (Button) v.findViewById(R.id.add_receipt_button);
+        mAddNewLogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startAddLogPageActivity();
+            }
+        });
 
         updateUI();
 
@@ -61,17 +66,26 @@ public class ReceiptListFragment extends Fragment {
         mAdapter.notifyDataSetChanged();
 
         boolean listIsEmpty = receiptLab.getReceipts().isEmpty();
-
         updateEmptyNotification(listIsEmpty);
     }
 
     private void updateEmptyNotification(boolean isEmpty) {
         if (isEmpty) {
-            mEmptyListAddButton.setVisibility(View.VISIBLE);
+            mAddNewLogButton.setVisibility(View.VISIBLE);
             mEmptyListTextView.setVisibility(View.VISIBLE);
         } else {
-            mEmptyListAddButton.setVisibility(View.INVISIBLE);
+            mAddNewLogButton.setVisibility(View.INVISIBLE);
             mEmptyListTextView.setVisibility(View.INVISIBLE);
         }
+    }
+
+    private void startAddLogPageActivity() {
+
+        Receipt receipt = new Receipt();
+
+        Intent intent = ReceiptPagerActivity.newIntent(getActivity(), receipt.getID());
+
+        startActivity(intent);
+
     }
 }

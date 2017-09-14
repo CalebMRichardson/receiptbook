@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,28 +41,30 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ReceiptH
 
     public class ReceiptHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView mTitleTextView;
         private ImageView mImageView;
+        private EditText mLocationText;
+        private EditText mDateText;
 
         private Receipt mReceipt;
 
         public ReceiptHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_receipt, parent, false));
 
-            mTitleTextView = (TextView) itemView.findViewById(R.id.log_title);
-            mImageView = (ImageView) itemView.findViewById(R.id.log_expand);
+            mImageView = (ImageView) itemView.findViewById(R.id.log_image);
+            mLocationText = (EditText) itemView.findViewById(R.id.location_edit_text);
+            mDateText = (EditText) itemView.findViewById(R.id.date_edit_text);
 
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            Log.i(TAG, mReceipt.getTitle() + " Clicked");
+
         }
 
         public void bind(Receipt receipt) {
             mReceipt = receipt;
-            mTitleTextView.setText(mReceipt.getTitle());
+            mDateText.setText(mReceipt.getDate().toString());
         }
     }
 }

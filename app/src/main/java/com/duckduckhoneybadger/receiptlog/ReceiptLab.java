@@ -22,11 +22,10 @@ public class ReceiptLab {
     private ReceiptLab(Context context) {
         mReceipts = new ArrayList<>();
 
-        for (int i = 0; i < 100; i++) {
-            Receipt receipt = new Receipt();
-            receipt.setTitle("Receipt #" + i);
-            mReceipts.add(receipt);
-        }
+//        for (int i = 0; i < 100; i++) {
+//            Receipt receipt = new Receipt();
+//            mReceipts.add(receipt);
+//        }
     }
 
     public List<Receipt> getReceipts() {

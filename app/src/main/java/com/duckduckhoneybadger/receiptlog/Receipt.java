@@ -6,7 +6,6 @@ import java.util.UUID;
 public class Receipt {
 
     private UUID mID;
-    private String mTitle;
     private Date mDate;
 
     public Receipt() {
@@ -20,14 +19,6 @@ public class Receipt {
 
     public UUID getID() {
         return mID;
-    }
-
-    public String getTitle() {
-        return mTitle;
-    }
-
-    public void setTitle(String title) {
-        mTitle = title;
     }
 
     public Date getDate() {
