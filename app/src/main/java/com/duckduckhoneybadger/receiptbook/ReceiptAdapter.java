@@ -48,7 +48,7 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ReceiptH
         private Receipt mReceipt;
 
         public ReceiptHolder(LayoutInflater inflater, ViewGroup parent) {
-            super(inflater.inflate(R.layout.list_item_receipt, parent, false));
+            super(inflater.inflate(R.layout.list_item_receipt_child, parent, false));
 
             mImageView = (ImageView) itemView.findViewById(R.id.log_image);
             mLocationText = (EditText) itemView.findViewById(R.id.location_edit_text);
