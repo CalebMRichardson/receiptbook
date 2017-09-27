@@ -3,4 +3,6 @@
 
     <string name="empty_list_text">Well it looks like you\'re empty. :/</string>
     <string name="add_receipt_text">Add your receipts here.</string>
+    <string name="location">Location </string>
+    <string name="total">Total: </string>
 </resources>
