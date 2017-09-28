@@ -3,8 +3,8 @@
    <solid android:color="@color/pastelBlue" />
 
     <stroke
-        android:width="0dp"
-        android:color="@color/pastelBlue"/>
+        android:width="2px"
+        android:color="@color/pastelBlack"/>
 
     <padding
         android:bottom="0dp"
@@ -13,9 +13,9 @@
         android:top="0dp"/>
 
     <corners
-        android:bottomLeftRadius="10dp"
-        android:bottomRightRadius="10dp"
+        android:bottomLeftRadius="25dp"
+        android:bottomRightRadius="25dp"
         android:topLeftRadius="25dp"
-        android:topRightRadius="10dp"/>
+        android:topRightRadius="25dp"/>
 
 </shape>

@@ -6,6 +6,7 @@ public class ReceiptBookActivity extends SingleFrameActivity {
 
     @Override
     protected Fragment createFragment() {
-        return new ReceiptListFragment().newInstance();
+        //return new ReceiptListFragment().newInstance();
+        return new ExpReceiptBookFragment().newInstance();
     }
 }

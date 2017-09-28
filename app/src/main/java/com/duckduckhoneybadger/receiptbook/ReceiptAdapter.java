@@ -41,8 +41,6 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ReceiptH
 
     public class ReceiptHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private ImageView mImageView;
-        private EditText mLocationText;
         private EditText mDateText;
 
         private Receipt mReceipt;
@@ -50,9 +48,7 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ReceiptH
         public ReceiptHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_receipt_child, parent, false));
 
-            mImageView = (ImageView) itemView.findViewById(R.id.log_image);
-            mLocationText = (EditText) itemView.findViewById(R.id.location_edit_text);
-            mDateText = (EditText) itemView.findViewById(R.id.date_edit_text);
+            mDateText = itemView.findViewById(R.id.date_edit_text);
 
             itemView.setOnClickListener(this);
         }

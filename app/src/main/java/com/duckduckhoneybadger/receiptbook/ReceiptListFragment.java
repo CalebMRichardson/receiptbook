@@ -1,13 +1,10 @@
 package com.duckduckhoneybadger.receiptbook;
 
 import android.content.Intent;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,7 +40,7 @@ public class ReceiptListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_receipt_list, container, false);
 
-        mRecyclerView = (RecyclerView) v.findViewById(R.id.receipt_recycler_view);
+        mRecyclerView = v.findViewById(R.id.receipt_recycler_view);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 1);
         mRecyclerView.setLayoutManager(gridLayoutManager);
@@ -51,8 +48,8 @@ public class ReceiptListFragment extends Fragment {
         //TODO Change SpaceItemDecoration(v1, v2) to dimen.xml file
         mRecyclerView.addItemDecoration(new SpaceItemDecoration(20, 10));
 
-        mEmptyListTextView = (TextView) v.findViewById(R.id.empty_list_textview);
-        mAddNewLogButton = (Button) v.findViewById(R.id.add_receipt_button);
+        mEmptyListTextView = v.findViewById(R.id.empty_list_text_view);
+        mAddNewLogButton = v.findViewById(R.id.add_receipt_button);
         mAddNewLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
