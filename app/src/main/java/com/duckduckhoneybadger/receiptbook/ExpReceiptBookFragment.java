@@ -3,9 +3,13 @@ package com.duckduckhoneybadger.receiptbook;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.UiThread;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +24,7 @@ import java.util.List;
 public class ExpReceiptBookFragment extends Fragment {
 
     private ExpReceiptAdapter mAdapter;
+    private RecyclerView mRecyclerView;
 
     public static ExpReceiptBookFragment newInstance() {
         return new ExpReceiptBookFragment();
@@ -37,6 +42,17 @@ public class ExpReceiptBookFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_receipt_list, container, false);
 
+        FloatingActionButton addReceiptFAB = v.findViewById(R.id.add_receipt_fab);
+
+        addReceiptFAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO Build Add Receipt feature
+            }
+        });
+
+        mRecyclerView = v.findViewById(R.id.receipt_recycler_view);
+
         ExpReceipt one = new ExpReceipt("Test1");
         ExpReceipt two = new ExpReceipt("Test2");
         ExpReceipt three = new ExpReceipt("Test3");
@@ -52,7 +68,6 @@ public class ExpReceiptBookFragment extends Fragment {
 
         final List<ExpReceiptLocation> locations = Arrays.asList(first, second, third, fourth);
 
-        RecyclerView recyclerView = v.findViewById(R.id.receipt_recycler_view);
         mAdapter = new ExpReceiptAdapter(getActivity(), locations);
         mAdapter.setExpandCollapseListener(new ExpandableRecyclerAdapter.ExpandCollapseListener() {
 
@@ -69,9 +84,9 @@ public class ExpReceiptBookFragment extends Fragment {
             }
         });
 
-        recyclerView.setAdapter(mAdapter);
-        recyclerView.addItemDecoration(new SpaceItemDecoration(20, 10));
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.addItemDecoration(new SpaceItemDecoration(20, 10));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         return v;
     }

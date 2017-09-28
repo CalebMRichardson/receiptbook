@@ -5,4 +5,7 @@
     <string name="add_receipt_text">Add your receipts here.</string>
     <string name="location">Location </string>
     <string name="total">Total: </string>
+    <string name="title_activity_delete">DELETE</string>
+    <string name="title_activity_add_receipt">AddReceipt</string>
+    <string name="title_activity_test">test</string>
 </resources>
