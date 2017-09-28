@@ -40,7 +40,7 @@ public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.ReceiptH
     }
 
     public class ReceiptHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        
+
         private EditText mDateText;
 
         private Receipt mReceipt;
